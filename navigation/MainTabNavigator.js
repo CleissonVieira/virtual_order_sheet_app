@@ -9,7 +9,7 @@ import SettingsScreen from '../screens/SettingsScreen'
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
-  default: {},
+  default: { header: null },
 })
 
 const HomeStack = createStackNavigator(
@@ -27,6 +27,7 @@ HomeStack.navigationOptions = {
       name="md-beer"
     />
   ),
+  header: null,
 }
 
 HomeStack.path = ''
@@ -43,6 +44,7 @@ LinksStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name="ios-paper" />
   ),
+  header: null,
 }
 
 LinksStack.path = ''
@@ -59,6 +61,8 @@ SettingsStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name="md-log-out" />
   ),
+  header: null,
+  headerMode: 'none',
 }
 
 SettingsStack.path = ''
@@ -67,6 +71,9 @@ const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
+}, {
+  header: null,
+  headerMode: 'none',
 })
 
 tabNavigator.path = ''

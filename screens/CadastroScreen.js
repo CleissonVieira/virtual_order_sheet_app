@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Container, Content, Form, Item, Input, Label, Button, Text } from 'native-base'
 
-export default function HomeScreen() {
+export default function Cadastro() {
   const [name, setName] = useState('')
   const [cpf, setCpf] = useState('')
   const [phone, setPhone] = useState('')
@@ -47,6 +47,6 @@ export default function HomeScreen() {
   )
 }
 
-HomeScreen.navigationOptions = {
-  header: null,
+CadastroScreen.navigationOptions = {
+  header: Cadastro,
 }

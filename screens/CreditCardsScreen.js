@@ -23,9 +23,16 @@ export default function CreditCardsScreen() {
             name: "Wesley",
             last_name: "Burlani",
             cpf_holder: "44842704802"
+          },
+          {
+            card_number: "1234123412341234",
+            expiring_date: "02/27",
+            name: "Asdqdw",
+            last_name: "Fsdfai",
+            cpf_holder: "44842704802"
           }
         ]
-      }
+      },
     ]
 
     const getCreditCards = () => {

@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon'
 import HomeScreen from '../screens/HomeScreen'
 import LinksScreen from '../screens/LinksScreen'
 import SettingsScreen from '../screens/SettingsScreen'
+import CreditCardsScreen from '../screens/CreditCardsScreen'
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -31,6 +32,28 @@ HomeStack.navigationOptions = {
 }
 
 HomeStack.path = ''
+
+///////// Listagem de cartoes - remover depois 
+const CreditCardsStack = createStackNavigator(
+  {
+    CreditCards: CreditCardsScreen,
+  },
+  config
+)
+CreditCardsStack.navigationOptions = {
+  tabBarLabel: 'Cartões',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name="md-beer"
+    />
+  ),
+  header: null,
+}
+
+CreditCardsStack.path = ''
+///// Listagem de cartoes
+
 
 const LinksStack = createStackNavigator(
   {
@@ -71,6 +94,7 @@ const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
+  CreditCardsStack,
 }, {
   header: null,
   headerMode: 'none',

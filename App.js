@@ -7,6 +7,11 @@ import { Ionicons } from '@expo/vector-icons'
 
 import AppNavigator from './navigation/AppNavigator'
 
+if (Platform.OS === 'android') { // only android needs polyfill
+  require('intl'); // import intl object
+  require('intl/locale-data/jsonp/pt-BR'); // load the required locale details
+}
+
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
 

@@ -7,11 +7,13 @@ import HomeScreen from '../screens/HomeScreen'
 import LinksScreen from '../screens/LinksScreen'
 import SettingsScreen from '../screens/SettingsScreen'
 import CreditCardsScreen from '../screens/CreditCardsScreen'
+import CreditCardRegisterScreen from '../screens/CreditCardRegisterScreen'
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
   default: { header: null },
 })
+
 
 const HomeStack = createStackNavigator(
   {
@@ -37,6 +39,7 @@ HomeStack.path = ''
 const CreditCardsStack = createStackNavigator(
   {
     CreditCards: CreditCardsScreen,
+    CreditCardRegister: CreditCardRegisterScreen
   },
   config
 )
@@ -53,7 +56,6 @@ CreditCardsStack.navigationOptions = {
 
 CreditCardsStack.path = ''
 ///// Listagem de cartoes
-
 
 const LinksStack = createStackNavigator(
   {

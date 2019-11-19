@@ -6,7 +6,7 @@ import axios from 'axios';
 ** Simulador IOS:           http://localhost:3333/
 */
 const backendApi = axios.create({
-  baseURL: 'http://172.20.98.149:5000/',
+  baseURL: 'https://gpbares.herokuapp.com/',
 });
 
 export default backendApi;

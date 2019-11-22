@@ -1,43 +1,14 @@
 import React, { useState, useEffect }  from 'react'
-import { View, StyleSheet } from 'react-native'
-import { Container, Content, Header, List, ListItem, Text, Body, Right } from 'native-base'
-import { FlatList } from 'react-native-gesture-handler'
-import axios from 'axios';
+import { Container, Content, List, ListItem, Body } from 'native-base'
 import backendApi from '../services/backendApi';
 import CreditCard from 'react-native-credit-card';
+import ActionButton from 'react-native-action-button';
 
-export default function CreditCardsScreen() {
+export default function CreditCardsScreen({navigation}) {
+
     const [cards, setCards] = useState([])
 
-    const mock = [
-      {
-        name: 'wesley',
-        email: 'wesley.burlanI@hub2b.com.br',
-        password: 'D422D97190D0DA72CA0EB0C36C1244B5',
-        cpf: '44842704802',
-        phone: 'string',
-        credit_cards: [
-          {
-            card_number: "4449911424784865",
-            expiring_date: "02/27",
-            name: "Wesley",
-            last_name: "Burlani",
-            cpf_holder: "44842704802"
-          },
-          {
-            card_number: "1234123412341234",
-            expiring_date: "02/27",
-            name: "Asdqdw",
-            last_name: "Fsdfai",
-            cpf_holder: "44842704802"
-          }
-        ]
-      },
-    ]
-
     const getCreditCards = () => {
-        setCards(mock[0].credit_cards)
-        return
         backendApi.get("/api/client")
         .then(result => { console.log(result); setCards(result.data[0].credit_cards)})
         .catch(err => console.log(err));
@@ -61,6 +32,10 @@ export default function CreditCardsScreen() {
           ))}
         </List>
       </Content>
+      <ActionButton
+          buttonColor="rgba(231,76,60,1)"
+          onPress={() => {navigation.navigate('CreditCardRegister')}}
+      />
     </Container>
   )
 }

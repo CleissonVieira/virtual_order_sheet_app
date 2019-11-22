@@ -2,7 +2,7 @@ import React from 'react'
 //import { View } from 'react-native'
 import { Content, Container, Form, Item, Input, Label } from 'native-base'
 
-export default function LinksScreen() {
+export default function LoginScreen() {
     return (
       <Container>
       <Content>
@@ -31,6 +31,6 @@ export default function LinksScreen() {
     );
 }
 
-LinksScreen.navigationOptions = {
-  title: 'Links',
+LoginScreen.navigationOptions = {
+  title: 'Login',
 }
